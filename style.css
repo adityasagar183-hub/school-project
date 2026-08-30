@@ -513,3 +513,23 @@ body::before {
         filter: drop-shadow(0 0 18px rgba(0,255,255,0.35));
     }
 }
+
+/* MOBILE NAVIGATION FIX */
+@media (max-width: 600px) {
+    .navigation {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .navigation button {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative;
+        z-index: 100;
+    }
+}
