@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My introduction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="background">
+    <div class="grid"></div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="screen active" id="screen1">
+   <div class="photo-wrapper">
+     <img src="IMG-20260210-WA0058.jpg"D class="profile-photo" alt="Aditya">
+   </div>
+    <h1 id="typing"></h1>
+    <p class="intro">Welcome to my little corner of the internet. 
+    </p>
+
+    <p class="tap">Tap anywhere to continue…
+
+    </p>
+    <div class="navigation">
+     <button onclick="nextScreen()">NEXT →</button>
+    </div>
+</div>
+
+<div class="screen" id="screen2">
+   <h2>About Me</h2>
+
+   <p class="text">
+      Hey! I'm Aditya...👋 <br><br>
+      I'm a student learning development who loves creating amazing web experiences.
+    </p>
+
+   <p class="text"> This little  website is just a glimpse of me.</p>
+
+   <div class="navigation">
+    <button onclick="prevScreen()">← BACK</button>
+    <button onclick="nextScreen()">NEXT →</button>
+   </div>
+</div>
+
+
+<div class="screen" id="screen3">
+
+    <div class="section-number">02 / 04</div>
+
+    <h2>Things I Enjoy</h2>
+
+    <div class="cards">
+
+        <div class="mini-card">
+            <div class="mini-icon">💻</div>
+            <h3>Coding</h3>
+            <p>Learning programming and building websites.</p>
+        </div>
+
+        <div class="mini-card">
+            <div class="mini-icon">🎮</div>
+            <h3>Gaming</h3>
+            <p>Gaming is one of my favourite ways to have fun.</p>
+        </div>
+
+        <div class="mini-card">
+            <div class="mini-icon">🚀</div>
+            <h3>Learning</h3>
+            <p>Always trying to learn something new.</p>
+        </div>
+
+    </div>
+
+    <button class="secret-btn" onclick="showSecret()">
+        DON'T CLICK 👀
+    </button>
+
+    <div class="navigation">
+        <button onclick="prevScreen()">← BACK</button>
+    </div>
+
+</div>  
+
+<div class="screen" id="screen4">
+
+  <div class="section-number">03 / 04</div>
+
+    <h2>About Aditya</h2>
+
+    <div class="details-card">
+
+        <div class="detail">
+            <span>👤</span>
+            <div>
+                <small>NAME</small>
+                <p>Aditya Sagar</p>
+            </div>
+        </div>
+
+        <div class="detail">
+            <span>💻</span>
+            <div>
+                <small>INTEREST</small>
+                <p>Coding & Web Development</p>
+            </div>
+        </div>
+
+        <div class="detail">
+            <span>🎮</span>
+            <div>
+                <small>FAVOURITE THING</small>
+                <p>Gaming</p>
+            </div>
+        </div>
+
+        <div class="detail">
+            <span>🎯</span>
+            <div>
+                <small>GOAL</small>
+                <p>Keep learning & create something amazing.</p>
+            </div>
+        </div>
+
+    </div>
+
+  <div class="footer">THANKS FOR VISITING ✨</div>
+
+  <div class="navigation">
+    <button onclick="prevScreen()">← BACK</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

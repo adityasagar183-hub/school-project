@@ -1,0 +1,515 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #050507;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow: hidden;
+}
+
+/* ===== GAMING + CODING BACKGROUND ===== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(50, 80, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(150, 50, 255, 0.16), transparent 30%),
+        #050507;
+}
+
+/* Coding-style grid */
+
+.grid {
+    position: absolute;
+    inset: -50%;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    transform: perspective(500px) rotateX(55deg);
+
+    animation: gridMove 12s linear infinite;
+}
+
+@keyframes gridMove {
+    from {
+        transform: perspective(500px) rotateX(55deg) translateY(0);
+    }
+
+    to {
+        transform: perspective(500px) rotateX(55deg) translateY(45px);
+    }
+}
+
+
+/* Floating lights */
+
+.background span {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(150, 170, 255, 0.8);
+
+    box-shadow:
+        0 0 10px rgba(100,130,255,0.8),
+        0 0 25px rgba(100,130,255,0.5);
+
+    animation: float 7s infinite ease-in-out;
+}
+
+.background span:nth-child(2) {
+    left: 15%;
+    top: 25%;
+}
+
+.background span:nth-child(3) {
+    left: 80%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+.background span:nth-child(4) {
+    left: 70%;
+    top: 75%;
+    animation-delay: 2s;
+}
+
+.background span:nth-child(5) {
+    left: 25%;
+    top: 80%;
+    animation-delay: 3s;
+}
+
+.background span:nth-child(6) {
+    left: 50%;
+    top: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-35px) scale(1.6);
+        opacity: 1;
+    }
+}
+
+/* SCREEN */
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    filter: blur(6px);
+
+    transition: all 0.7s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* PHOTO */
+.profile {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 42%;
+    object-fit: cover;
+
+    object-position: center 42%;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.25),
+        0 0 60px rgba(100,120,255,0.2);
+
+    margin-bottom: 25px;
+}
+/* SMALL INTRO TEXT */
+.hello {
+    font-size: 12px;
+    letter-spacing: 5px;
+    opacity: 0.5;
+    margin: 5px 0 10px;
+}
+
+/* MAIN NAME */
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+/* ABOUT HEADING */
+h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+/* PARAGRAPH */
+.text {
+    max-width: 550px;
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: center;
+    opacity: 0.75;
+    padding: 0 25px;
+}
+
+/* INTRO */
+.intro {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* TAP */
+.tap {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.4;
+    margin-top: 30px;
+}
+
+/* BUTTON */
+button {
+    padding: 14px 30px;
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 12px;
+
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+}
+
+/* SECRET */
+#secret {
+
+    display: none;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    opacity: 0.8;
+
+}
+
+.details-card {
+    width: min(600px, 90vw);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.05);
+
+    text-align: left;
+
+    transition: 0.3s ease;
+}
+
+.detail:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.09);
+}
+
+.detail > span {
+    font-size: 25px;
+}
+
+.detail small {
+    font-size: 9px;
+    letter-spacing: 2px;
+    opacity: 0.45;
+}
+
+.detail p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+@keyframes revealText {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .details-card {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   NAVIGATION BUTTONS
+========================= */
+
+.navigation {
+    position: absolute;
+    bottom: 28px;
+
+    width: min(500px, 90vw);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation button {
+    padding: 11px 20px;
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    transition: all 0.3s ease;
+}
+
+.navigation button:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   ANIMATED CODE BACKGROUND
+========================= */
+
+body::before {
+    content:
+        "01  101  0110  1001   <html>   1101  0101   const code = true;   0011   </>";
+    
+    position: fixed;
+    inset: -100px;
+
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 3;
+
+    letter-spacing: 4px;
+    word-spacing: 25px;
+
+    opacity: 0.06;
+
+    white-space: pre-wrap;
+    pointer-events: none;
+
+    transform: rotate(-8deg);
+
+    animation: codeMove 18s linear infinite;
+
+    z-index: -1;
+}
+
+@keyframes codeMove {
+    from {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    to {
+        transform: translateY(-300px) rotate(-8deg);
+    }
+}
+
+/* =========================
+   TECH PHOTO INTRO
+========================= */
+
+.photo-wrapper {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    margin: 20px auto;
+}
+
+.photo-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    border-radius: 50%;
+
+    animation: rotateRing 6s linear infinite;
+}
+
+.photo-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -18px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    animation: rotateRingReverse 10s linear infinite;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 20%;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(255,255,255,0.8);
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.35),
+        0 0 60px rgba(0,255,255,0.12);
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateRingReverse {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}/* =========================
+   EXTRA PHOTO ANIMATIONS
+========================= */
+
+/* Photo ka subtle floating effect */
+.photo-wrapper {
+    animation: photoFloat 4s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* Photo ke around moving light */
+.photo-wrapper::before {
+    box-shadow: 0 0 12px rgba(0,255,255,0.5);
+}
+
+
+/* Outer ring ko thoda faster */
+.photo-wrapper::after {
+    box-shadow: 0 0 18px rgba(255,255,255,0.12);
+}
+
+
+/* Photo hover effect */
+.photo-wrapper:hover {
+    transform: scale(1.04);
+}
+
+.photo-wrapper:hover .profile-photo {
+    filter: brightness(1.12);
+}
+
+
+/* Light sweep on photo */
+.photo-wrapper .profile-photo {
+    transition: 0.4s ease;
+}
+
+
+/* Pulsing glow */
+.photo-wrapper {
+    box-shadow:
+        0 0 0 rgba(0,255,255,0);
+    
+    animation:
+        photoFloat 4s ease-in-out infinite,
+        photoPulse 3s ease-in-out infinite;
+}
+
+@keyframes photoPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(0,255,255,0.15));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 18px rgba(0,255,255,0.35));
+    }
+}
